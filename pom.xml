@@ -50,7 +50,6 @@
                     <includes>
                         <include>**/testcases/**/*.java</include>
                         <include>**/testcases/*.java</include>
-
                     </includes>
                 </configuration>
                 <executions>

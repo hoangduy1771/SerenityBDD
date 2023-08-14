@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @RunWith(SerenityRunner.class)
 public class LoginTest extends PageObject {
@@ -36,7 +37,6 @@ public class LoginTest extends PageObject {
         WebElementFacade textBox = find(By.name("q"));
         textBox.shouldBePresent();
         textBox.typeAndEnter("Hello");
-
 
 
         Thread.sleep(2000);

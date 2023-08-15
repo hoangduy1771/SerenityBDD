@@ -38,9 +38,29 @@ public class GmailLogin extends PageObject {
                 .pollingEvery(Duration.ofMillis(500))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()[normalize-space()='This browser or app may not be secure.']]")));
 
+
+
         Thread.sleep(2000);
 
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

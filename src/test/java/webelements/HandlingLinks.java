@@ -1,9 +1,9 @@
 package webelements;
 
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;

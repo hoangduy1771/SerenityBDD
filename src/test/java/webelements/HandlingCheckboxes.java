@@ -1,10 +1,9 @@
 package webelements;
 
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.webelements.Checkbox;
 import org.junit.Test;
 import org.junit.runner.RunWith;

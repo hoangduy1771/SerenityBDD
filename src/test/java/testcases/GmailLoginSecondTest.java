@@ -11,32 +11,22 @@ import org.openqa.selenium.WebDriver;
 import steps.HomePageSteps;
 
 @RunWith(SerenityRunner.class)
-public class GmailLogin {
+public class GmailLoginSecondTest {
 
-    @Managed(driver = "chrome")
+    @Managed(driver = "firefox")
     WebDriver driver;
 
     @Steps
     HomePageSteps homePageSteps;
 
-
-    @Title("Executing 1st test")
+    @Title("Executing 3rd test")
     @Test
-    @Screenshots(onlyOnFailures = true)
-    public void TC0001_SuccessfulLoginTest() {
+    @Screenshots(forEachAction = true)
+    public void TC0003_SuccessfulLoginTest() {
         homePageSteps.userLoginToGmail();
         homePageSteps.verifyText();
 
     }
-    @Title("Executing 2nd test")
-    @Test
-    @Screenshots(afterEachStep = true)
-    public void TC0002_SuccessfulLoginTest() {
-        homePageSteps.userLoginToGmail();
-        homePageSteps.verifyText();
-
-    }
-
 }
 
 

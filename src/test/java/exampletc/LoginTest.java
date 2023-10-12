@@ -1,4 +1,4 @@
-package testcases;
+package exampletc;
 
 
 import net.serenitybdd.annotations.Managed;
@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @RunWith(SerenityRunner.class)
 public class LoginTest extends PageObject {
@@ -20,7 +19,7 @@ public class LoginTest extends PageObject {
 
     @Title("Execute Serenity Test")
     @Test
-    public void doLogin() throws InterruptedException {
+    public void searchGoogle() throws InterruptedException {
         open();
         System.out.println(getTitle());
 //        driver.get("https://google.com");

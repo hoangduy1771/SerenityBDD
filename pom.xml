@@ -23,13 +23,11 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-junit</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -51,6 +49,10 @@
                         <include>**/testcases/**/*.java</include>
                         <include>**/testcases/*.java</include>
                     </includes>
+<!--                    <parallel>classes</parallel>-->
+<!--                    <threadCount>2</threadCount>-->
+<!--                    <forkCount>2C</forkCount> &lt;!&ndash;    forkCount 2C mean 2 processors per CPU              &ndash;&gt;-->
+
                 </configuration>
                 <executions>
                     <execution>

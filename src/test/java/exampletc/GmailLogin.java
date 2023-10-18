@@ -1,4 +1,4 @@
-package testcases;
+package exampletc;
 
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.annotations.Screenshots;
@@ -11,22 +11,32 @@ import org.openqa.selenium.WebDriver;
 import steps.HomePageSteps;
 
 @RunWith(SerenityRunner.class)
-public class GmailLoginSecondTest {
+public class GmailLogin {
 
-    @Managed(driver = "firefox")
+    @Managed(driver = "chrome")
     WebDriver driver;
 
     @Steps
     HomePageSteps homePageSteps;
 
-    @Title("Executing 3rd test")
+
+    @Title("Executing 1st test")
     @Test
-    @Screenshots(forEachAction = true)
-    public void TC0003_SuccessfulLoginTest() {
+    @Screenshots(onlyOnFailures = true)
+    public void TC0001_SuccessfulLoginTest() {
         homePageSteps.userLoginToGmail();
         homePageSteps.verifyText();
 
     }
+    @Title("Executing 2nd test")
+    @Test
+    @Screenshots(afterEachStep = true)
+    public void TC0002_SuccessfulLoginTest() {
+        homePageSteps.userLoginToGmail();
+        homePageSteps.verifyText();
+
+    }
+
 }
 
 

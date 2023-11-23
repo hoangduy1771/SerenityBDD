@@ -1,45 +1,59 @@
 package testcases;
 
-import net.serenitybdd.annotations.Managed;
-import net.serenitybdd.annotations.Screenshots;
-import net.serenitybdd.annotations.Steps;
-import net.serenitybdd.annotations.Title;
+import net.serenitybdd.annotations.*;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.thucydides.junit.annotations.Concurrent;
 import net.thucydides.junit.annotations.TestData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import steps.HomePage9gagSteps;
 import steps.HomePageSteps;
+import utils.ExcelReader;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-
+@Narrative(text={"In order to run parameterized test",
+        "As a Serenity Runner",
+        "We need to Integrate Excel Reading"})
 @RunWith(SerenityParameterizedRunner.class)
+@Concurrent(threads = "4")
 public class Parameterization {
 
     private final String username;
     private final String password;
 
-
-
     public Parameterization(String username, String password) {
         this.username = username;
         this.password = password;
-
     }
-
 
     @TestData
     public static Collection<Object[]> testData() {
-        Object[][] data = new Object[2][2];
 
-        data[0][0] = "username1";
-        data[0][1] = "password1";
+        ExcelReader excel = new ExcelReader(".\\src\\test\\resources\\data\\excel\\usernamepassword.xlsx");
+        String sheetName = "Sheet1";
+        int rows = excel.getRowCount(sheetName);
+        int cols = excel.getColumnCount(sheetName);
+        System.out.println("row count: " + rows);
+        System.out.println("cols count: " + cols);
 
-        data[1][0] = "username2";
-        data[1][1] = "password2";
+        System.out.println("cell read: " + excel.getCellData(sheetName, 0, 2));
+
+        Object[][] data = new Object[rows-1][cols];
+
+//        data[0][0] = excel.getCellData(sheetName, 0, 2);
+//        data[0][1] = excel.getCellData(sheetName, 1, 2);
+//
+//        data[1][0] = excel.getCellData(sheetName, 0, 3);
+//        data[1][1] = excel.getCellData(sheetName, 1, 3);
+
+        for (int rowNum = 2; rowNum <= rows; rowNum++) {
+            for (int colNum = 0; colNum < cols; colNum++) {
+                data[rowNum-2][colNum] = excel.getCellData(sheetName, colNum, rowNum);
+            }
+        }
 
         return Arrays.asList(data);
     }

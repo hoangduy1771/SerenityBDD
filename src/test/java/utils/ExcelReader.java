@@ -143,8 +143,7 @@ public class ExcelReader {
 
 		if(index==-1)
 			return "";
-		
-	
+
 		sheet = workbook.getSheetAt(index);
 		row = sheet.getRow(rowNum-1);
 		if(row==null)
@@ -169,12 +168,7 @@ public class ExcelReader {
 	           cellText = cal.get(Calendar.MONTH)+1 + "/" +
 	                      cal.get(Calendar.DAY_OF_MONTH) + "/" +
 	                      cellText;
-	           
-	         
-
 	         }
-
-		  
 		  
 		  return cellText;
 	  }else if(cell.getCellType()==CellType.BLANK)

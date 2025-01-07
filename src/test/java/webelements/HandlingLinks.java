@@ -43,7 +43,7 @@ public class HandlingLinks extends PageObject {
         System.out.println("Printing links from other project method 2");
         System.out.println("=============================================");
 //        using .then to chain call and find all element from element container
-        WebElementFacade otherProjectsSection = find(By.xpath("//div[@class='other-projects']"));
+        WebElementFacade otherProjectsSection = find(By.xpath("//div[@class='other-project']"));
         ArrayList<WebElementFacade> otherProject = otherProjectsSection.thenFindAll(By.tagName("a"));
 
         for (int i = 0; i < otherProject.size(); i++) {

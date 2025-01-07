@@ -19,9 +19,10 @@ public class HandlingResizable extends PageObject {
 
     @Test
     public void handlingSlider() {
-        openUrl("https://demoqa.com/resizable");
+//        openUrl("https://demoqa.com/resizable");
+        openUrl("https://jqueryui.com/resources/demos/resizable/default.html");
 
-        withAction().dragAndDropBy(find(By.xpath("//div[contains(text(), 'Resizable box,')]/following-sibling::span[@class='react-resizable-handle react-resizable-handle-se']")), 300, 500).perform();
+        withAction().dragAndDropBy(find(By.xpath("//div[contains(@class, 'ui-resizable-se ui-icon')]")), 300, 500).perform();
 
 
 

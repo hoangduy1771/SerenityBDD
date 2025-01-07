@@ -32,10 +32,6 @@ public class HomePage9gagSteps {
         home9gag.verifyButtonEnabled(stateExpected, buttonText);
     }
 
-    @Step("Test commit")
-    public void what() {
-
-    }
 
 
 

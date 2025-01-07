@@ -33,7 +33,7 @@ public class GmailLoginThroughStackOverflow extends PageObject {
         find(By.xpath("//*[contains(text(),'Next')]")).click();
 
 //        Fluent wait
-//        this will wait for 2 second by default
+//        this will wait for 2 second by default built-in
 //        waitForCondition().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()[normalize-space()='This browser or app may not be secure.']]")));
 
 //        this is also fluent wait but with timeout increase to 5 from default is 2
